@@ -25,7 +25,7 @@ function Todo() {
           <input type="text" placeholder="Enter todo" />
           <button onClick={handleAddTodo}>todo add</button>
         </form>
-        {/* {isLoading && <p>Yuklanmoqda</p>}
+        {isLoading && <p>Yuklanmoqda</p>}
         {isError && <p>Hatolik yuz berdi!</p>}
         {data.data && (
           <ul>
@@ -33,12 +33,14 @@ function Todo() {
               <li key={todo.id}>{todo.title}</li>
             ))}
           </ul>
-        )} */}
-        {
-          data && data.map((todo, index) => {
-            <li key={index}>{todo}</li>
-          })
-        }
+        )}
+        {data?.data?.map((todo) => (
+          <div key={todo.id}>
+            <li>
+              id: {todo.id} - {todo.title}
+            </li>
+          </div>
+        ))}
       </div>
     </div>
   );
